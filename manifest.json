@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Media Assistant",
+  "version": "1.0",
+  "description": "Injects chatbot overlay",
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+  {
+    "matches": [
+      "*://*.youtube.com/*",
+      "*://*.netflix.com/*"
+    ],
+    "js": ["content.js"],
+    "run_at": "document_end"
+  }
+    ],
+    "web_accessible_resources": [
+    {
+        "resources": [
+        "chatbot_ui/index.html",
+        "chatbot_ui/chatbot.js",
+        "chatbot_ui/style.css"
+        ],
+        "matches": [
+        "*://*.youtube.com/*",
+        "*://*.netflix.com/*"
+        ]
+    }
+    ],
+  "action": {
+    "default_title": "Media Assistant"
+  }
+}
