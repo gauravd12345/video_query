@@ -3,17 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <title>Chatbot</title>
-    <style>
-      body {
-        background: rgb(21, 93, 250);
-        font-size: 20px;
-        padding: 20px;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        
-      }
-    </style>
+    <link href="./tailwind.css" rel="stylesheet">
   </head>
-  <body>
-    UI Overlay Test
+  <body class="bg-white dark:bg-neutral-800 h-screen m-0">
+    <div class="h-full w-full font-sans text-lg bg-white dark:bg-neutral-800">
+        <div class="text-center text-2xl font-medium dark:text-white text-black p-4">
+        Welcome to Video Query
+        </div>
+        <div>
+        <input
+            type="text"
+            placeholder="Ask away!"
+            class="my-40 mx-20 max-w-3/4 dark:bg-neutral-700 p-1 px-3 w-full rounded text-white border border-neutral-600"
+        />
+        </div>
+    </div>
   </body>
 </html>
