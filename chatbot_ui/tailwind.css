@@ -1,4 +1,5 @@
 /*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&display=swap');
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -13,16 +14,17 @@
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
-    --container-xs: 20rem;
+    --container-md: 28rem;
+    --container-xl: 36rem;
+    --container-3xl: 48rem;
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
-    --text-xl: 1.25rem;
-    --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
     --font-weight-medium: 500;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --font-inter: "Inter", sans-serif;
   }
 }
 @layer base {
@@ -177,17 +179,11 @@
   .m-0 {
     margin: calc(var(--spacing) * 0);
   }
-  .mx-8 {
-    margin-inline: calc(var(--spacing) * 8);
+  .mx-13 {
+    margin-inline: calc(var(--spacing) * 13);
   }
-  .mx-10 {
-    margin-inline: calc(var(--spacing) * 10);
-  }
-  .mx-11 {
-    margin-inline: calc(var(--spacing) * 11);
-  }
-  .mx-12 {
-    margin-inline: calc(var(--spacing) * 12);
+  .mx-14 {
+    margin-inline: calc(var(--spacing) * 14);
   }
   .mx-15 {
     margin-inline: calc(var(--spacing) * 15);
@@ -195,11 +191,38 @@
   .mx-20 {
     margin-inline: calc(var(--spacing) * 20);
   }
-  .mx-auto {
-    margin-inline: auto;
-  }
   .my-40 {
     margin-block: calc(var(--spacing) * 40);
+  }
+  .flex {
+    display: flex;
+  }
+  .h-5 {
+    height: calc(var(--spacing) * 5);
+  }
+  .h-12 {
+    height: calc(var(--spacing) * 12);
+  }
+  .h-14 {
+    height: calc(var(--spacing) * 14);
+  }
+  .h-20 {
+    height: calc(var(--spacing) * 20);
+  }
+  .h-50 {
+    height: calc(var(--spacing) * 50);
+  }
+  .h-75 {
+    height: calc(var(--spacing) * 75);
+  }
+  .h-100 {
+    height: calc(var(--spacing) * 100);
+  }
+  .h-105 {
+    height: calc(var(--spacing) * 105);
+  }
+  .h-1000 {
+    height: calc(var(--spacing) * 1000);
   }
   .h-full {
     height: 100%;
@@ -207,26 +230,32 @@
   .h-screen {
     height: 100vh;
   }
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  .w-1000 {
+    width: calc(var(--spacing) * 1000);
+  }
   .w-full {
     width: 100%;
   }
-  .max-w-0\.5 {
-    max-width: calc(var(--spacing) * 0.5);
-  }
-  .max-w-1\/2 {
-    max-width: calc(1/2 * 100%);
-  }
-  .max-w-2 {
-    max-width: calc(var(--spacing) * 2);
+  .w-md {
+    width: var(--container-md);
   }
   .max-w-3\/4 {
     max-width: calc(3/4 * 100%);
   }
-  .max-w-xs {
-    max-width: var(--container-xs);
+  .max-w-3xl {
+    max-width: var(--container-3xl);
   }
-  .content-center {
-    align-content: center;
+  .max-w-xl {
+    max-width: var(--container-xl);
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .justify-between {
+    justify-content: space-between;
   }
   .rounded {
     border-radius: 0.25rem;
@@ -238,20 +267,11 @@
   .border-neutral-600 {
     border-color: var(--color-neutral-600);
   }
-  .bg-neutral-800 {
-    background-color: var(--color-neutral-800);
-  }
   .bg-white {
     background-color: var(--color-white);
   }
-  .p-0\.5 {
-    padding: calc(var(--spacing) * 0.5);
-  }
   .p-1 {
     padding: calc(var(--spacing) * 1);
-  }
-  .p-2 {
-    padding: calc(var(--spacing) * 2);
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);
@@ -262,11 +282,17 @@
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-6 {
+    padding-block: calc(var(--spacing) * 6);
+  }
   .text-center {
     text-align: center;
   }
-  .font-sans {
-    font-family: var(--font-sans);
+  .font-inter {
+    font-family: var(--font-inter);
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -275,10 +301,6 @@
   .text-lg {
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
-  }
-  .text-xl {
-    font-size: var(--text-xl);
-    line-height: var(--tw-leading, var(--text-xl--line-height));
   }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
