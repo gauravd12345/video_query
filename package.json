@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "@tailwindcss/cli": "^4.1.11",
-    "react": "^19.1.0",
-    "react-scripts": "^5.0.1",
-    "tailwindcss": "^4.1.11"
-  }
-}

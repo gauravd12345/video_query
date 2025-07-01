@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Video Query",
+  "version": "1.0",
+  "description": "Injects chatbot overlay",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://*.netflix.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://*.netflix.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "dist/index.html",
+        "dist/assets/*"
+      ],
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://*.netflix.com/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_title": "Video Query",
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
