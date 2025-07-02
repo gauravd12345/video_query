@@ -5,7 +5,7 @@ const ChatInterface = () => {
   const [text, setText] = useState("")
 
   return (
-    <div className="font-inter w-[360px] h-[500px] box-border overflow-hidden flex flex-col bg-white dark:bg-neutral-800 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+    <div className="font-inter w-[360px] h-[500px] box-border border border-white overflow-hidden flex flex-col bg-white dark:bg-neutral-800 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.5)]">
       <div className="text-center text-2xl font-medium dark:text-white text-black p-3">
         
       </div>
