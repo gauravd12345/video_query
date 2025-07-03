@@ -3,7 +3,10 @@
   "name": "Video Query",
   "version": "1.0",
   "description": "Injects chatbot overlay",
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["tabs", "activeTab", "scripting"],
+  "background": {
+    "scripts": ["background.js"]
+  },
   "host_permissions": [
     "*://*.youtube.com/*",
     "*://*.netflix.com/*"

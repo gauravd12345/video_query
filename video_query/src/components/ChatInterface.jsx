@@ -4,19 +4,20 @@ import Conversation from "./Conversation"
 const ChatInterface = () => {
   const [allTexts, setAllTexts] = useState([[1, "What can I help with?"]])
   const [text, setText] = useState("")
-  const [currentUrl, setCurrentUrl] = useState("");
+  const [currentUrl, setCurrentUrl] = useState("https://www.youtube.com/watch?v=9hE5-98ZeCg");
 
   useEffect(() => {
     const handleMessage = (event) => {
-      if (event.data?.type === "current-url") {
-        setCurrentUrl(event.data.url);
-        console.log("[Iframe] Got URL:", event.data.url);
+      if (event.data?.type === "tab-info") {
+        console.log("📺 Got tab URL from content.js:", event.data.url);
+        setCurrentUrl(event.data.url); 
       }
     };
 
     window.addEventListener("message", handleMessage);
     return () => window.removeEventListener("message", handleMessage);
   }, []);
+
 
   return (
     <div className="font-inter w-[360px] h-[500px] box-border border border-white overflow-hidden flex flex-col bg-white dark:bg-neutral-800 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.5)]">
@@ -39,17 +40,17 @@ const ChatInterface = () => {
 
               setAllTexts(prev => [...prev, userMessage]);
 
-              fetch("http://127.0.0.1:5000/chat", {
+              fetch("https://video-query-reew.onrender.com/chat", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ 
                   prompt: text,
-                  file_uri: "https://www.youtube.com/watch?v=9hE5-98ZeCg'" 
+                  file_uri: currentUrl
                 })
               })
               .then(res => res.json())
               .then(data => {
-                
+                console.log(currentUrl)
                 const botMessage = [1, data.response];
                 setAllTexts(prev => [...prev, botMessage]);
 
