@@ -1,4 +1,4 @@
-const Conversation = ({chatBotTexts, userTexts, allTexts}) => {
+const Conversation = ({allTexts}) => {
   return (
     <div className="flex flex-col items-end space-y-4">
       {allTexts.map((text, idx) => (
