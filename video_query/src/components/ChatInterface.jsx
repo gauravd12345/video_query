@@ -10,7 +10,7 @@ const ChatInterface = () => {
   useEffect(() => {
     const handleMessage = (event) => {
       if (event.data?.type === "tab-info") {
-        console.log("📺 Got tab URL from content.js:", event.data.url);
+        console.log("Got tab URL from content.js:", event.data.url);
         setCurrentUrl(event.data.url); 
       }
     };
