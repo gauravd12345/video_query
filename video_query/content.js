@@ -14,7 +14,6 @@ iframe.style.overflow = "hidden";
 
 document.body.appendChild(iframe);
 
-// ✅ Wait for iframe to load before sending message
 iframe.onload = () => {
   runtime.runtime.sendMessage("get-tab-info", (info) => {
     if (info?.url) {
@@ -27,7 +26,7 @@ iframe.onload = () => {
         "*"
       );
     } else {
-      console.warn("❌ No tab info received.");
+      console.warn("No tab info received.");
     }
   });
 };
@@ -38,9 +37,8 @@ const checkUrlChange = () => {
   const newUrl = location.href;
   if (newUrl !== currentUrl) {
     currentUrl = newUrl;
-    console.log("🔄 URL changed to:", newUrl);
+    console.log("URL changed to:", newUrl);
 
-    // Send to iframe
     iframe.contentWindow?.postMessage({
       type: "tab-info",
       url: currentUrl,
@@ -48,11 +46,9 @@ const checkUrlChange = () => {
   }
 };
 
-// Watch every 1s (adjustable)
 setInterval(checkUrlChange, 1000);
 
 
-// ✅ Handle resizing from React app
 window.addEventListener("message", (event) => {
   if (event.data?.type === "resize-iframe") {
     if (event.data.height) {
