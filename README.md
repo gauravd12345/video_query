@@ -11,8 +11,7 @@ Here's some examples:
 - FastAPI
 - ReactJS
 - NodeJS
-- TailwindCSS
-- Vite
+- TailwindCSS & Vite
 
 ## Programming Languages
 - Frontend: HTML, CSS, & JS
